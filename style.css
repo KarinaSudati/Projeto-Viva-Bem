@@ -274,11 +274,11 @@ header .header__content .header__nav .nav__link:hover {
   margin-right: 0.5rem;
 }
 
+.prevencao--fem {
+  background-color: #FFF0F6;
+}
 .prevencao--fem .card__list li::before {
   color: #AD346A;
-}
-.prevencao--fem .card--highlight {
-  border: 4px solid #AD346A;
 }
 
 .prevencao--masc .card__list li::before {

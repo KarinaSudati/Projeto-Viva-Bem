@@ -3,6 +3,7 @@
 
 // 1. Variáveis de Cores e Tipografia
 // Cores de Destaque dos Ícones 
+$fundo-section-rosa: #FFF0F6; // Fundo claro para seção feminina
 $cor-destaque-mamas: #AD346A;      // Rosa Escuro
 $cor-destaque-testiculos: #2769A3; // Azul Escuro
 $cor-destaque-vacinas: #244A2D;    // Verde Escuro
@@ -326,8 +327,9 @@ header {
 
 // Estilos Específicos de Gênero
 .prevencao--fem {
+    background-color: $fundo-section-rosa;
     .card__list li::before { color: $cor-rosa; }
-    .card--highlight { border: 4px solid $cor-rosa; }
+    
 }
 
 .prevencao--masc {
