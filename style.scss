@@ -1,0 +1,480 @@
+// Importação das fontes
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap');
+
+// 1. Variáveis de Cores e Tipografia
+// Cores de Destaque dos Ícones 
+$cor-destaque-mamas: #AD346A;      // Rosa Escuro
+$cor-destaque-testiculos: #2769A3; // Azul Escuro
+$cor-destaque-vacinas: #244A2D;    // Verde Escuro
+$cor-destaque-mental: #976C00;     // Ouro/Marrom
+
+// Variáveis de fundo claro (Usando seus valores HEX)
+$fundo-alerta-rosa: #F9D5E5; 
+$fundo-alerta-azul: #CFE2F3;
+$fundo-alerta-verde: #D4EDDA;
+$fundo-alerta-amarelo: #FFE9C2;
+
+// Cores gerais
+$cor-azul-escuro: #4247A2; // Base da nav/footer
+$cor-verde-agua: #52B095; // Gradiente
+$cor-azul-claro: #1173D4; // Botão/Título principal
+$cor-verde-cta: #33CC73; // Botão/Título gradiente e ícone check
+$cor-rosa: $cor-destaque-mamas; // Rosa geral agora é o rosa de destaque
+$cor-amarela: $cor-destaque-mental; // Amarelo geral agora é o destaque
+$cor-fundo-claro: #F8F8F8;
+$cor-texto-principal: #4F4F4F;
+$cor-texto-claro: #FFFFFF;
+
+$fonte-titulo: "Poppins", sans-serif;
+$fonte-corpo: "Inter", sans-serif;
+
+$espacamento-base: 1rem; // 16px
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1100px;
+$breakpoint-mobile: 480px; 
+
+
+// 2. Base e Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: $fonte-corpo;
+}
+
+body {
+    background-color: $cor-fundo-claro;
+    min-height: 100vh;
+}
+
+// 3. HEADER (Barra de Navegação)
+header {
+    background-image: url(./img/bannerHeader.png); /* Substituir pelo seu caminho de imagem */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom; 
+    min-height: 65vh; 
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header__content {
+        display: flex; // ✨ FLEX CONTAINER
+        justify-content: space-between;
+        align-items: center;
+        
+        margin-top: $espacamento-base * 2;
+        padding: $espacamento-base * 0.5 $espacamento-base * 1.5;
+        border-radius: 50px;
+        max-width: $breakpoint-desktop;
+        width: 90%; 
+        
+        background: linear-gradient(to right, $cor-azul-escuro 0%, $cor-verde-agua 100%);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        
+        .header__logo {
+            height: 35px; 
+            filter: brightness(0) invert(1);
+        }
+
+        .header__nav {
+            display: flex; // ✨ FLEX CONTAINER para os links
+            align-items: center;
+            gap: $espacamento-base * 2;
+            
+            .nav__link {
+                color: $cor-texto-claro;
+                font-family: $fonte-titulo;
+                font-weight: 500;
+                font-size: 0.95rem;
+
+                &:hover { opacity: 0.8; }
+            }
+
+            @media (max-width: $breakpoint-tablet) {
+                display: none; 
+            }
+        }
+    }
+}
+
+// 4. BANNER/HERO (Conteúdo sobre a imagem)
+.hero {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+    .hero__content {
+        max-width: 500px;
+        margin-left: 10%; 
+        margin-top: -20vh; 
+        
+        @media (max-width: $breakpoint-tablet) {
+            margin: 0 auto; 
+            text-align: center;
+            padding-top: $espacamento-base * 2;
+            margin-top: -10vh;
+        }
+
+        .hero__title {
+            font-family: $fonte-titulo;
+            font-size: 3rem; 
+            font-weight: 700;
+            line-height: 1.2;
+            
+            background: linear-gradient(to right, $cor-azul-claro 0%, $cor-verde-cta 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero__subtitle {
+            font-size: 1rem;
+            margin-top: $espacamento-base;
+            margin-bottom: $espacamento-base * 2;
+            color: $cor-texto-principal;
+        }
+    }
+}
+
+// 5. Botões
+.btnButtons {
+    display: flex;
+    gap: $espacamento-base;
+    
+    @media (max-width: $breakpoint-tablet) {
+        justify-content: center;
+        margin-bottom: $espacamento-base * 3;
+    }
+}
+
+.btn {
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.btn--primary {
+    background-color: $cor-azul-claro;
+    color: $cor-texto-claro;
+    &:hover { background-color: darken($cor-azul-claro, 10%); }
+}
+
+.btn--secondary {
+    background-color: $cor-verde-cta;
+    color: $cor-texto-claro;
+    &:hover { background-color: darken($cor-verde-cta, 10%); }
+}
+
+
+// 6. Configuração Geral de Seção e Container
+.container {
+    max-width: $breakpoint-desktop;
+    width: 90vw; 
+    margin: 0 auto;
+}
+
+.section {
+    padding: $espacamento-base * 4 0;
+    text-align: center;
+    background-color: $cor-fundo-claro;
+
+    &__title {
+        font-family: $fonte-titulo;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: $espacamento-base * 2;
+        
+        &--blue { color: $cor-azul-claro; }
+        &--pink { color: $cor-rosa; }
+    }
+}
+
+
+// 7. Cards Base (Geral)
+.cards-wrapper {
+    display: flex; // ✨ FLEX CONTAINER
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: $espacamento-base * 2;
+    margin-top: $espacamento-base * 3;
+}
+
+.card {
+    background-color: $cor-texto-claro;
+    padding: $espacamento-base * 2;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    &__title {
+        font-family: $fonte-titulo;
+        font-weight: 600;
+        margin-bottom: $espacamento-base * 0.5;
+        color: $cor-azul-escuro;
+    }
+}
+
+// 8. Seção Importância (3 Cards)
+.importancia {
+    .importancia__description {
+        max-width: 800px;
+        margin: 0 auto $espacamento-base * 3;
+        font-size: 1.1rem;
+        color: $cor-texto-principal;
+    }
+    
+    .card--importance {
+        flex: 1 1 30%; 
+        max-width: 350px; 
+        
+        img {
+            height: 2.5rem; /* Ajuste o tamanho da imagem de ícone */
+            margin-bottom: $espacamento-base;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &--check { color: $cor-verde-cta; }
+        &--family { color: $cor-azul-claro; }
+        &--heart { color: $cor-rosa; }
+    }
+}
+
+
+// 9. Seções Prevenção (Cards por Idade)
+.prevencao {
+    padding: $espacamento-base * 4 0;
+    
+    .age-grid {
+        gap: $espacamento-base;
+
+        .card--age {
+            text-align: left;
+
+            flex-basis: calc(33.333% - #{$espacamento-base} * 2 / 3);
+            max-width: 380px;
+            
+            @media (max-width: ($breakpoint-desktop + 100px)) {
+                flex-basis: calc(33.333% - #{$espacamento-base} *2 / 3); 
+            }
+            @media (max-width: ($breakpoint-tablet + 200px)) {
+                flex-basis: calc(50% - #{$espacamento-base} * 2 / 2);
+            }
+            @media (max-width: $breakpoint-mobile) {
+                flex-basis: 100%; 
+            }
+
+            .card-img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin: 0 auto $espacamento-base;
+                display: block;
+            }
+
+            .card__title {
+                font-size: 1.15rem;
+                text-align: center; /* Centraliza o título */
+            }
+
+            .card__list {
+                list-style: none;
+                padding-left: 0;
+                font-size: 0.95rem;
+                text-align: left;
+                
+                li {
+                    margin-bottom: $espacamento-base * 0.5;
+                    padding-left: $espacamento-base;
+                    &::before {
+                        content: "•";
+                        font-weight: 700;
+                        margin-right: $espacamento-base * 0.5;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Estilos Específicos de Gênero
+.prevencao--fem {
+    .card__list li::before { color: $cor-rosa; }
+    .card--highlight { border: 4px solid $cor-rosa; }
+}
+
+.prevencao--masc {
+    .card__list li::before { color: $cor-azul-claro; }
+    .card--highlight-masc { border: 4px solid $cor-azul-claro; }
+    
+    .card--filler {
+        visibility: hidden;
+        height: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        margin: 0;
+    }
+}
+
+
+// 10. Seção Alertas Importantes (Layout 2x2 Adaptado ao Novo HTML)
+.alertas {
+    background-color: $cor-fundo-claro;
+    padding-bottom: $espacamento-base * 6;
+    
+    // Contêiner principal para centralizar o título
+    .box-alertas {
+        max-width: $breakpoint-desktop;
+        width: 90vw;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: $espacamento-base * 3;
+        
+        h2 {
+            font-family: $fonte-titulo;
+            font-size: 2rem;
+            font-weight: 700;
+            color: $cor-azul-claro; 
+        }
+    }
+    
+    // Contêiner Flexbox para os cards
+    .card-alertas {
+        display: flex; // ✨ FLEX CONTAINER
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: $espacamento-base * 2;
+        max-width: 900px; 
+        margin: 0 auto;
+
+        .card {
+            /* Estilo Base do Card de Alerta */
+            flex-basis: 45%; // ✨ FLEX ITEM: Garante 2 itens por linha
+            max-width: 450px;
+            padding: $espacamento-base * 2;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 1.4;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+            @media (max-width: $breakpoint-tablet) {
+                flex-basis: 100%; /* Empilha em mobile */
+            }
+
+            /* Cores de Fundo (Novas classes card-cor) */
+            &.card-rosa { background-color: $fundo-alerta-rosa; }
+            &.card-azul { background-color: $fundo-alerta-azul; }
+            &.card-verde { background-color: $fundo-alerta-verde; }
+            &.card-amarelo { background-color: $fundo-alerta-amarelo; }
+
+            h3 {
+                display: flex; // ✨ FLEX CONTAINER para alinhar ícone e texto
+                align-items: center;
+                justify-content: center;
+                font-family: $fonte-titulo;
+                font-size: 1.1rem;
+                font-weight: 600;
+                margin-bottom: $espacamento-base * 0.75;
+                
+                /* Aplicação das Cores dos Títulos */
+                .card-rosa & { color: $cor-destaque-mamas; }
+                .card-azul & { color: $cor-destaque-testiculos; }
+                .card-verde & { color: $cor-destaque-vacinas; }
+                .card-amarelo & { color: $cor-destaque-mental; }
+
+                img {
+                    width: 25px; /* Tamanho do Ícone */
+                    height: 25px;
+                    margin-right: $espacamento-base * 0.5;
+                    flex-shrink: 0;
+                    object-fit: contain;
+                }
+            }
+            
+            p {
+                font-size: 0.9rem;
+                color: $cor-texto-principal;
+                padding: 0 $espacamento-base * 0.5;
+            }
+        }
+    }
+}
+
+
+// 11. Rodapé (Footer - 3 Colunas)
+.footer {
+    background-color: $cor-azul-escuro;
+    color: $cor-texto-claro;
+    padding-top: $espacamento-base * 4;
+    font-size: 0.9rem;
+
+    &__content {
+        display: flex; // ✨ FLEX CONTAINER para as 3 colunas
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: $espacamento-base * 3;
+        
+        @media (max-width: $breakpoint-tablet) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    &__col {
+        flex: 1 1 30%; // ✨ FLEX ITEM
+        
+        @media (max-width: $breakpoint-tablet) {
+            flex-basis: 100%;
+        }
+    }
+
+    &__logo-img {
+        height: 40px; 
+        filter: brightness(0) invert(1);
+    }
+
+    &__slogan {
+        font-weight: 600;
+        color: $cor-verde-agua;
+    }
+
+    &__title {
+        font-size: 1.1rem;
+        color: $cor-azul-claro;
+    }
+
+    &__list {
+        list-style: none;
+        a { color: $cor-texto-claro; &:hover { color: $cor-azul-claro; } }
+    }
+    
+    &__bottom {
+        padding: $espacamento-base 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+// 12. Media Query Mobile Geral (Ajustes Finais)
+@media (max-width: $breakpoint-tablet) {
+    header { min-height: 40vh; }
+    .hero__content .hero__title { font-size: 2rem; }
+}
