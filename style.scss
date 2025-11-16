@@ -94,11 +94,18 @@ header {
                 &:hover { opacity: 0.8; }
             }
 
-
-            // correção da responsividade Ocultar o menu apenas em telas MÓVEIS pequenas (480px),
-              
-            @media (max-width: $breakpoint-mobile) {
-                display: none; 
+           /* ALTERAÇÃO CRUCIAL: REMOVER OU COMENTAR A REGRA DE OCULTAÇÃO */
+    @media (max-width: $breakpoint-tablet) {
+        /* display: none; */ /* <--- REMOVIDO PARA VISIBILIDADE */
+        
+        /* Ajuste para que a navegação ocupe 100% da largura em telas menores */
+        width: 100%;
+        justify-content: space-around;
+        padding: 0.5rem 0;
+        
+        /* Em telas muito pequenas, forçar uma nova linha abaixo do logo */
+        flex-wrap: wrap; 
+        order: 1;
             }
         }
     }

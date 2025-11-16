@@ -44,6 +44,7 @@ header .header__content .header__nav {
   display: flex;
   align-items: center;
   gap: 2rem;
+  /* ALTERAÇÃO CRUCIAL: REMOVER OU COMENTAR A REGRA DE OCULTAÇÃO */
 }
 header .header__content .header__nav .nav__link {
   color: #FFFFFF;
@@ -54,9 +55,16 @@ header .header__content .header__nav .nav__link {
 header .header__content .header__nav .nav__link:hover {
   opacity: 0.8;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   header .header__content .header__nav {
-    display: none;
+    /* display: none; */ /* <--- REMOVIDO PARA VISIBILIDADE */
+    /* Ajuste para que a navegação ocupe 100% da largura em telas menores */
+    width: 100%;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+    /* Em telas muito pequenas, forçar uma nova linha abaixo do logo */
+    flex-wrap: wrap;
+    order: 1;
   }
 }
 
