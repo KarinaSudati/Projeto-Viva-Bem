@@ -54,7 +54,7 @@ header .header__content .header__nav .nav__link {
 header .header__content .header__nav .nav__link:hover {
   opacity: 0.8;
 }
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   header .header__content .header__nav {
     display: none;
   }

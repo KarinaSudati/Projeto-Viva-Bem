@@ -94,7 +94,10 @@ header {
                 &:hover { opacity: 0.8; }
             }
 
-            @media (max-width: $breakpoint-tablet) {
+
+            // correção da responsividade Ocultar o menu apenas em telas MÓVEIS pequenas (480px),
+              
+            @media (max-width: $breakpoint-mobile) {
                 display: none; 
             }
         }
