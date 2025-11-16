@@ -48,22 +48,5 @@ Todas as restrições e requisitos do desafio foram cumpridos com sucesso:
 | **Proibição de Grid** | ✅ Concluído | Não foi utilizada a propriedade `display: grid;`. |
 | **Proibição de Position** | ✅ Concluído | Não foram utilizadas `position: absolute`, `relative`, `fixed`, etc. |
 
----
 
-## ⚙️ Como Executar Localmente
-
-Para clonar e rodar o projeto em sua máquina:
-
-1.  Clone o repositório:
-    ```bash
-    git clone [Link do seu repositório]
-    ```
-2.  Navegue até a pasta do projeto:
-    ```bash
-    cd nome-do-projeto
-    ```
-3.  **Compile o SCSS:** Este projeto utiliza SCSS. Você precisará de um compilador (como o Live Sass Compiler no VS Code ou o CLI do SASS) para gerar o arquivo `style.css` a partir do `style.scss`.
-4.  Abra o arquivo `index.html` em seu navegador.
-
----
-*Desenvolvido por: Karina Sudati/ KarinaSudati
+*Desenvolvido por: Karina Sudati/ KarinaSudati 
